@@ -191,7 +191,7 @@ const handleMenuAction = (item) => {
   box-shadow: 35px -35px 0 10px var(--white);
   pointer-events: none;
 }
-
+.close-btn{display: none;}
 @media screen and (max-width:1024px){
   .navigation {
     display: block; 
@@ -243,6 +243,7 @@ const handleMenuAction = (item) => {
     margin-left: 25%; 
   }
   .close-btn {
+  display: block;
   position: absolute;
   top: 10px;
   right: 10px;
