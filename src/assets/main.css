@@ -1,0 +1,57 @@
+@import 'normalize.css';
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #FFFFFF;
+  --secondary-color: #F8F9FE;
+  --blue: #2a2185;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+@media screen and (max-width:1160px) {}
+
+@media screen and (max-width:1024px) {
+  .main {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media screen and (max-width:768px) {}
+
+@media screen and (max-width:480px) {}
