@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router';
 import Sidebar from '../components/Sidebar.vue';
 import Header from '../components/Header.vue';
 import ButtonDetails from '../components/Buttons/ButtonDetails.vue';
-const isSidebarVisible = ref(false);
+const isSidebarVisible = ref(true);
 
 const toggleSidebar = () => {
   isSidebarVisible.value = !isSidebarVisible.value;

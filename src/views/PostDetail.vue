@@ -4,8 +4,8 @@ import { useRoute } from 'vue-router';
 import axios from 'axios';
 import Sidebar from '@/components/Sidebar.vue';
 import Header from '@/components/Header.vue';
-const isSidebarVisible = ref(false);
-
+const images = import.meta.glob('@/assets/images/*.jpg');
+const isSidebarVisible = ref(true);
 const toggleSidebar = () => {
   isSidebarVisible.value = !isSidebarVisible.value;
 };
@@ -52,7 +52,7 @@ onMounted(() => {
       <Header @toggle-sidebar="toggleSidebar" />
       <main class="l-card" v-if="post && user">
         <section class="l-card__text">
-          <img :src="`../src/assets/images/${post.image}`" alt="" class="my-image" />
+          <img :src="images[`/src/assets/images/${post.image}`]" alt="" class="my-image"/>   
           <h1 class="title">{{ post.title }}</h1>
           <span class="tag tag-blue">{{ post.tags }}</span>
           <p>{{ post.content }}</p>

@@ -4,7 +4,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import Sidebar from '../components/Sidebar.vue';
 import Header from '../components/Header.vue';
-const isSidebarVisible = ref(false);
+const images = import.meta.glob('@/assets/images/*.jpg');
+const isSidebarVisible = ref(true);
 
 const toggleSidebar = () => {
   isSidebarVisible.value = !isSidebarVisible.value;
@@ -102,7 +103,7 @@ onMounted(() => {
         </div>
         <div v-for="post in posts" :key="post.postID" class="card">
           <div class="card__header">
-            <img :src="`../src/assets/images/${post.image}`" alt="card__image" class="card__image" />
+            <img :src="images[`/src/assets/images/${post.image}`]" alt="card__image" class="card__image" />  
           </div>
           <div class="card__body">
             <span class="tag" :class="{

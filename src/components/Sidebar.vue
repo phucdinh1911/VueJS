@@ -2,6 +2,7 @@
 import { useRouter } from 'vue-router';
 defineProps({
   isSidebarVisible: Boolean,
+  default:true,
 });
 const router = useRouter();
 
@@ -190,21 +191,10 @@ const handleMenuAction = (item) => {
   box-shadow: 35px -35px 0 10px var(--white);
   pointer-events: none;
 }
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: var(--white);
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
 
 @media screen and (max-width:1024px){
   .navigation {
-
+    display: block; 
     width: 100%;
     z-index: 1;
     border-radius: 0;
@@ -218,14 +208,13 @@ const handleMenuAction = (item) => {
     position: relative;
     width: 100%;
     top: 0;
-    left: 0;
     
   }
   .navigation ul li {
     width: 100%;
     top: 0;
     border-radius: 0;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
   }
   .navigation ul li .nav-link {
     width: 100%;
@@ -235,16 +224,16 @@ const handleMenuAction = (item) => {
     margin-top: 10px;
   }
   .navigation ul li .nav-link .icon {
-    min-width: 60px;
+    min-width: 50px;
     height: 60px;
     line-height: 60px;
     text-align: center;
   }
   .navigation ul li .nav-link .title {
-    padding: 0 10px;
+    padding: 0px 20px;
     height: 60px;
     line-height: 60px;
-    text-align: center;
+    text-align:center;
     white-space: normal;
   }
 
@@ -253,5 +242,16 @@ const handleMenuAction = (item) => {
     margin-bottom: 20px;
     margin-left: 25%; 
   }
+  .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--white);
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
 }
 </style>

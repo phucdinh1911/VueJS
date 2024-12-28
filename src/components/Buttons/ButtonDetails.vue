@@ -1,18 +1,12 @@
 <script setup>
 import { useRouter } from 'vue-router';
-
-// Khai báo props
 const props = defineProps({
   postID: {
     type: String,
     required: true
   }
 });
-
-// Khai báo emit
 const emit = defineEmits();
-
-// Lấy router để điều hướng
 const router = useRouter();
 
 const goToPostDetail = () => {

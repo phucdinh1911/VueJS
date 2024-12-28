@@ -2,7 +2,6 @@
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import Button1 from './Buttons/Button1.vue';
-
 const accountName = ref(''); 
 const searchQuery = ref('');
 const router = useRouter();

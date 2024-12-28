@@ -3,7 +3,8 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import Sidebar from '@/components/Sidebar.vue';
 import Header from '@/components/Header.vue';
-const isSidebarVisible = ref(false);
+const images = import.meta.glob('@/assets/images/*.jpg');
+const isSidebarVisible = ref(true);
 
 const toggleSidebar = () => {
   isSidebarVisible.value = !isSidebarVisible.value;
@@ -42,7 +43,8 @@ onMounted(() => {
 
 <template>
   <div class="container">
-    <Sidebar :isSidebarVisible="isSidebarVisible" @close-sidebar="closeSidebar" />
+    <Sidebar :isSidebarVisible="isSidebarVisible" @close-sidebar="isSidebarVisible = false" />
+   
     <div class="main">
       <Header @toggle-sidebar="toggleSidebar" />
       <div class="intro">
@@ -53,8 +55,7 @@ onMounted(() => {
       <div class="content">
         <div v-for="post in posts" :key="post.postID" class="card">
           <div class="card__header">
-            <img :src="`../src/assets/images/${post.image}`" alt="card__image" class="card__image" width="600" />
-          </div>
+            <img :src="images[`/src/assets/images/${post.image}`]" alt="card__image" class="card__image" width="600" />          </div>
           <div class="card__body">
             <span class="tag" :class="{
               'tag-blue': post.tags === 'Tin công nghệ',

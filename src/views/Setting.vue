@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import Sidebar from '@/components/Sidebar.vue';
 import Header from '@/components/Header.vue';
-const isSidebarVisible = ref(false);
+const isSidebarVisible = ref(true);
 
 const toggleSidebar = () => {
   isSidebarVisible.value = !isSidebarVisible.value;
