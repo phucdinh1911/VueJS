@@ -55,7 +55,7 @@ onMounted(() => {
       <div class="content">
         <div v-for="post in posts" :key="post.postID" class="card">
           <div class="card__header">
-            <img :src="images[`/src/assets/images/${post.image}`]" alt="card__image" class="card__image" width="600" />          </div>
+            <img :src="images[`/src/assets/images/${post.image}`]()" alt="card__image" class="card__image" width="600" /></div>
           <div class="card__body">
             <span class="tag" :class="{
               'tag-blue': post.tags === 'Tin công nghệ',
