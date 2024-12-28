@@ -52,7 +52,7 @@ onMounted(() => {
       <Header @toggle-sidebar="toggleSidebar" />
       <main class="l-card" v-if="post && user">
         <section class="l-card__text">
-          <img :src="`../src/assets/images/${post.image}`" alt="" class="my-image" />
+          <img :src="`../images/${post.image}`" alt="" class="my-image" />
           <h1 class="title">{{ post.title }}</h1>
           <span class="tag tag-blue">{{ post.tags }}</span>
           <p>{{ post.content }}</p>

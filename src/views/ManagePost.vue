@@ -102,7 +102,7 @@ onMounted(() => {
         </div>
         <div v-for="post in posts" :key="post.postID" class="card">
           <div class="card__header">
-            <img :src="`../src/assets/images/${post.image}`" alt="card__image" class="card__image" />
+            <img :src="`../images/${post.image}`" alt="card__image" class="card__image" />
           </div>
           <div class="card__body">
             <span class="tag" :class="{
