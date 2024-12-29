@@ -10,9 +10,6 @@ const toggleSidebar = () => {
   isSidebarVisible.value = !isSidebarVisible.value;
 };
 
-const closeSidebar = () => {
-  isSidebarVisible.value = false;
-};
 const route = useRoute();
 const postID = route.params.postID;
 const post = ref(null);
