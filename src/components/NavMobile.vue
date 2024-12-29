@@ -79,7 +79,7 @@ const handleMenuAction = (item) => {
 
 <style scoped>
 :root {
-  --blue: #007bff; /* Thay đổi màu sắc nếu cần */
+  --blue: #007bff; 
   --white: #ffffff;
 }
 
@@ -97,11 +97,11 @@ const handleMenuAction = (item) => {
   align-items: center;
   padding-top: 20px;
   transition: transform 0.3s ease-in-out;
-  transform: translateX(0); /* Thay đổi thành -100% để ẩn menu nếu cần */
+  transform: translateX(0); 
 }
 
 .navigation_Mobile.hidden {
-  transform: translateX(-100%); /* Thêm class này khi cần ẩn menu */
+  transform: translateX(-100%); 
 }
 
 .navigation_Mobile .close-btn {
