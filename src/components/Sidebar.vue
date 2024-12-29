@@ -1,11 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router';
-defineProps({
-  isSidebarVisible: Boolean,
-  default:true,
-});
 const router = useRouter();
-
 const menuItems = [
   {
     title: "Trang chủ",
@@ -41,10 +36,7 @@ const handleMenuAction = (item) => {
 </script>
 
 <template>
-  <div :class="{ navigation: true, active: !isSidebarVisible }" v-show="isSidebarVisible">
-    <div class="close-btn" @click="$emit('close-sidebar')">
-      <i class="bx bx-x"></i>
-    </div>
+  <div class="navigation">
     <a href="/" class="logo-link">
       <img src="../assets/images/logoSucodev.png" alt="Logo" />
     </a>
@@ -192,67 +184,5 @@ const handleMenuAction = (item) => {
   pointer-events: none;
 }
 .close-btn{display: none;}
-@media screen and (max-width:1024px){
-  .navigation {
-    display: block; 
-    width: 100%;
-    z-index: 1;
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-    border-top: 10px solid var(--blue);
-    border-bottom: 10px solid var(--blue);
-  }
 
-  .navigation ul {
-    position: relative;
-    width: 100%;
-    top: 0;
-    
-  }
-  .navigation ul li {
-    width: 100%;
-    top: 0;
-    border-radius: 0;
-    margin-bottom: 3%;
-  }
-  .navigation ul li .nav-link {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-  }
-  .navigation ul li .nav-link .icon {
-    min-width: 50px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-  }
-  .navigation ul li .nav-link .title {
-    padding: 0px 20px;
-    height: 60px;
-    line-height: 60px;
-    text-align:center;
-    white-space: normal;
-  }
-
-  .logo-link img{
-    width: 50%; 
-    margin-bottom: 20px;
-    margin-left: 25%; 
-  }
-  .close-btn {
-  display: block;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: var(--white);
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
-}
 </style>

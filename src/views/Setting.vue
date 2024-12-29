@@ -2,21 +2,22 @@
 import { ref, onMounted } from 'vue';
 import Sidebar from '@/components/Sidebar.vue';
 import Header from '@/components/Header.vue';
-const isSidebarVisible = ref(true);
+import NavMobile from '@/components/NavMobile.vue';
+const isSidebarVisible = ref(false);
 
 const toggleSidebar = () => {
   isSidebarVisible.value = !isSidebarVisible.value;
 };
 
-const closeSidebar = () => {
-  isSidebarVisible.value = false;
-};
 import AlertDev from '@/components/AlertDev.vue';
 </script>
 
 <template>
-  <div class="container">
-    <Sidebar :isSidebarVisible="isSidebarVisible" @close-sidebar="closeSidebar" />
+   <div class="container">
+    <Sidebar/>
+   <div class="Sidebar-Mobile" v-if="isSidebarVisible">
+    <NavMobile @closeSlidebar="toggleSidebar"/>
+   </div> 
     <div class="main">
       <Header @toggle-sidebar="toggleSidebar" />
       <AlertDev/>

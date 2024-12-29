@@ -4,7 +4,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import Sidebar from '../components/Sidebar.vue';
 import Header from '../components/Header.vue';
-const isSidebarVisible = ref(true);
+import NavMobile from '@/components/NavMobile.vue';
+const isSidebarVisible = ref(false);
 
 const toggleSidebar = () => {
   isSidebarVisible.value = !isSidebarVisible.value;
@@ -90,7 +91,10 @@ onMounted(() => {
 
 <template>
   <div class="container">
-    <Sidebar :isSidebarVisible="isSidebarVisible" @close-sidebar="closeSidebar" />
+    <Sidebar/>
+   <div class="Sidebar-Mobile" v-if="isSidebarVisible">
+    <NavMobile @closeSlidebar="toggleSidebar"/>
+   </div> 
     <div class="main">
       <Header @toggle-sidebar="toggleSidebar" />
       <div class="intro">
